@@ -1,6 +1,11 @@
 package com.alx.reactive_webflux.model;
 
-public class payment {
+import lombok.Builder;
+import lombok.Data;
+
+@Builder
+@Data
+public class Payment {
     String id;
     String userId;
     PaymentStatus status;
