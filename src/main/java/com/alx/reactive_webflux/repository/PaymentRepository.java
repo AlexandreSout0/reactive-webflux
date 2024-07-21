@@ -43,6 +43,7 @@ public class PaymentRepository {
     }
 
     public Mono<Payment> getPayment(final String userId){
+        return Mono.defer(() -> {
                     log.info("Getting payment from database - {}", userId);
             final Optional<Payment> payment = this.database.get(userId, Payment.class);
             return Mono.justOrEmpty(payment);
